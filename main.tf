@@ -16,7 +16,8 @@ resource "helm_repository" "incubator" {
 #Deploy SvcCat
 resource "helm_release" "istio" {
   name       = "istio"
-  repository = "${helm_repository.incubator.metadata.0.name}"
+#  repository = "${helm_repository.incubator.metadata.0.name}"
+  repository = "./istio/install/kubernetes/helm/"
   chart      = "istio"
   namespace  = "istio"
 
