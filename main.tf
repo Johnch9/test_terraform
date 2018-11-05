@@ -1,7 +1,8 @@
 #Setup Helm provider
 provider "helm" {
   kubernetes {
-    config_path = "${azurerm_kubernetes_cluster.k8s.kube_config_raw}"
+#    config_path = "${azurerm_kubernetes_cluster.k8s.kube_config_raw}"
+    config_path = "./azurek8s"
   }
 }
 
