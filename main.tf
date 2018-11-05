@@ -6,16 +6,16 @@ provider "helm" {
 }
 
 #Add Helm Repo for SVC Cat
-resource "helm_repository" "google-incubator-cat" {
-  name = "google-incubator-cat"
+resource "helm_repository" "incubator" {
+  name = "incubator"
   url  = "https://kubernetes-charts-incubator.storage.googleapis.com"
 }
 
 #Deploy SvcCat
-resource "helm_release" "catalog" {
-  depends_on = ["helm_repository.google-incubator-cat"]
+resource "helm_release" "istio" {
   name       = "istio"
-  chart      = "google-incubator-cat/istio"
+  repository = "${helm_repository.incubator.metadata.0.name}"
+  chart      = "istio"
   namespace  = "istio"
 
   set {
