@@ -9,14 +9,15 @@ provider "helm" {
 #Add Helm Repo for SVC Cat
 resource "helm_repository" "incubator" {
   name = "incubator"
-  url  = "https://github.com"
+#  url  = "https://kubernetes-charts-incubator.storage.googleapis.com"
+  url  = "./istio/install/kubernetes/helm/"
 }
 
 #Deploy SvcCat
 resource "helm_release" "istio" {
   name       = "istio"
   repository = "${helm_repository.incubator.metadata.0.name}"
-  chart      = "/istio/istio/tree/master/install/kubernetes/helm/istio"
+  chart      = "istio"
   namespace  = "istio"
 
   set {
