@@ -45,4 +45,4 @@ resource "null_resource" "third" {
 #     name  = "istio.sidecar-injector"
 #     value = true
 #   }
-}
+#}
