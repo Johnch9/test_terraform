@@ -44,7 +44,8 @@ resource "helm_repository" "incubator" {
 resource "helm_release" "istio" {
   name       = "istio"
 #  repository = "${helm_repository.incubator.metadata.0.name}"
-  repository = "./istio/install/kubernetes/helm/"
+  repository = "./"
+#  repository = "./istio/install/kubernetes/helm/"
   chart      = "istio"
   namespace  = "istio"
 
