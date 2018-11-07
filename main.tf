@@ -9,7 +9,7 @@ provider "helm" {
         # client_key             = "${azurerm_kubernetes_cluster.k8s.kube_config.0.client_key}"
         # cluster_ca_certificate = "${azurerm_kubernetes_cluster.k8s.kube_config.0.cluster_ca_certificate}"
 #    config_path = "${azurerm_kubernetes_cluster.k8s.kube_config_raw}"
-    config_path = "./azurek8s"
+    config_path = "~/.kube/config"
   }
 }
 
